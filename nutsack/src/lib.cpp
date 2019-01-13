@@ -1,4 +1,5 @@
 #include "lib.h"
+#include <iostream>
 
 void utils::print_version(){
   std::cout << "MAJOR VERISON: 1.0" << std::endl;

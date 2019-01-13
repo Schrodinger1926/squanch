@@ -1,7 +1,5 @@
+#include <nutsack.h>
 #include <iostream>
-#include "lib.h"
-
-extern int utils::get_cube(int);
 
 int utils::get_cube(int x){
   return utils::get_square(x)*x;
