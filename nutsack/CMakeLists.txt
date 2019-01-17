@@ -5,9 +5,9 @@ add_library(nutsack SHARED ${PROJECT_SOURCE_DIR}/src/lib.cpp)
 message("NUTSACK: ${PROJECT_SOURCE_DIR}/src")	
 
 target_include_directories(nutsack
-    PUBLIC
-			${PROJECT_SOURCE_DIR}/src
+    PRIVATE
+			${PROJECT_SOURCE_DIR}/include/nutsack/nutsack
 		INTERFACE 
-			${PROJECT_SOURCE_DIR}/include
+			${PROJECT_SOURCE_DIR}/include/nutsack
 		)
 
