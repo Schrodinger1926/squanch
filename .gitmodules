@@ -1,0 +1,3 @@
+[submodule "nutsack/dependencies/glfw"]
+	path = nutsack/dependencies/glfw
+	url = https://github.com/glfw/glfw.git
