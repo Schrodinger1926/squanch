@@ -12,9 +12,7 @@ sandbox_app::~sandbox_app(){
 
 void sandbox_app::run(){
     
-    nutsack::window win;
-    win.launch();
-    
+    this->launch_window();
     /*
     while(true){
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
