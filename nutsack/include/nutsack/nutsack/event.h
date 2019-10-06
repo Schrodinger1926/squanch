@@ -4,9 +4,8 @@ namespace nutsack{
 
     class nutsack_event{
         
-        virtual ~nutsack_event(){};
-        
+        public:
+            virtual ~nutsack_event(){};
 
-    }
-
+    };
 }

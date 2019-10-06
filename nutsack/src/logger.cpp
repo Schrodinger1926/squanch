@@ -1,6 +1,5 @@
 #include <nutsack/logger.h>
 
-
 namespace nutsack{
     
     std::shared_ptr<spdlog::logger> nutsack_logger::engine_logger;

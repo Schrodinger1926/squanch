@@ -2,11 +2,17 @@
 #include <nutsack/entry_point.h>
 #include <nutsack/logger.h>
 
-int main(int argc, char** argv){
- 
+void system_init() {
+
     nutsack::nutsack_logger::init();
 
-    nutsack::nutsack_logger::get_engine_logger()->info(" === Welcome to NUTSACK ENGINE ===");
+}
+
+int main(int argc, char** argv){
+ 
+    system_init();
+
+    NT_LOG_INFO(" === Welcome to NUTSACK ENGINE ===");
 
     std::shared_ptr<nutsack::nutsack_app> app = nutsack::nutsack_create_application();
 
