@@ -10,14 +10,6 @@ namespace nutsack{
     class nutsack_mouse_event;
     class window;
 
-
-    class event_dispatcher{
-        
-        public:
-    
-    };
-
-
     /* Interface for application users */
     class NUTSACK_API nutsack_app{
     
@@ -29,15 +21,25 @@ namespace nutsack{
             void on_event(nutsack_event& event);
         
         private:
-
-            virtual void on_key_event(nutsack_key_event& event);
             
-            virtual void on_mouse_event(nutsack_mouse_event& event);
+            virtual void on_key_press_event(nutsack_event& event);
+            
+            virtual void on_key_release_event(nutsack_event& event);
+            
+            virtual void on_mouse_cursor_event(nutsack_event& event);
+            
+            virtual void on_mouse_scroll_event(nutsack_event& event);
+            
+            virtual void on_mouse_button_press_event(nutsack_event& event);
+            
+            virtual void on_mouse_button_release_event(nutsack_event& event);
+
+            virtual void on_close_event(nutsack_event& event);
      
-        
+            virtual void on_unkown_event(nutsack_event& event);
+
         private:
             //TODO: Initialize with nullptr
             window* win;
     };
 }
-

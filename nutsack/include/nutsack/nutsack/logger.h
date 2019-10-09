@@ -18,27 +18,8 @@ namespace nutsack{
             inline static std::shared_ptr<spdlog::logger>& get_app_logger(){
                 return nutsack_logger::app_logger;
             }
-
     };
 }
-
-/*
-#ifdef DEV
-#define ENGINE_INFO(...) nutsack::get_engine_logger->info(__VA_ARGS__);
-#define ENGINE_DEBUG(...) nutsack::get_engine_logger->debug(__VA_ARGS__);
-#define ENGINE_WARN(...) nutsack::get_engine_logger->warn(__VA_ARGS__);
-#define ENGINE_ERROR(...) nutsack::get_engine_logger->error(__VA_ARGS__);
-#define ENGINE_FATAL(...) nutsack::get_engine_logger->fatal(__VA_ARGS__);
-
-#else
-
-#define ENGINE_INFO(...) 
-#define ENGINE_DEBUG(...)
-#define ENGINE_WARN(...)
-#define ENGINE_ERROR(...)
-#define ENGINE_FATAL(...)
-#endif //DEV
-*/
 
 template<typename... Types>
 inline void NT_LOG_INFO(Types... args){

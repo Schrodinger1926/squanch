@@ -15,17 +15,62 @@ namespace nutsack{
     window::t_event_cb window::event_cb;
 
     void window::key_event_callback(GLFWwindow* window, int key, int scancode, int action, int mods){
+        nutsack_event* event_ptr; 
+        
+        if(action == GLFW_PRESS)
+            event_ptr = new nutsack_key_press_event(key, 0);
+        
+        else if(action == GLFW_RELEASE)
+            event_ptr = new nutsack_key_release_event(key);
+            
+        else if(action == GLFW_REPEAT)
+            event_ptr = new nutsack_key_press_event(key, 1);
+
+        else
+            event_ptr = new nutsack_unknown_event();
         
         // create a key  event and dispatch
-        nutsack_event* event_ptr = new nutsack_key_event(key, action);
         window::event_cb(*event_ptr);
     }
 
-    void window::mouse_event_callback(GLFWwindow* window, double xpos, double ypos){
+    
+    void window::mouse_cursor_callback(GLFWwindow* window, double xpos, double ypos){
         
         // create a mouse event and dispatch
-        nutsack_event* event = new nutsack_mouse_event(xpos, ypos);
-        window::event_cb(*event);
+        nutsack_event* event_ptr = new nutsack_mouse_cursor_event(xpos, ypos);
+        window::event_cb(*event_ptr);
+    }
+
+    void window::mouse_scroll_callback(GLFWwindow* window, double xoffset, double yoffset){
+        nutsack_event* event_ptr = new nutsack_mouse_scroll_event(xoffset, yoffset);
+        window::event_cb(*event_ptr);
+         
+    }
+
+    void window::mouse_button_callback(GLFWwindow* window, int button, int action, int mods){
+        
+        nutsack_event* event_ptr;
+        
+        if(button ==  GLFW_MOUSE_BUTTON_RIGHT){
+            if(action == GLFW_PRESS)
+                event_ptr = new nutsack_mouse_button_press_event(nutsack_mouse_button_type::right_button);
+
+            else
+                event_ptr = new nutsack_mouse_button_release_event(nutsack_mouse_button_type::right_button);
+        }
+
+        else{
+     
+            if(action == GLFW_PRESS)
+                event_ptr = new nutsack_mouse_button_press_event(nutsack_mouse_button_type::left_button);
+
+            else
+                event_ptr = new nutsack_mouse_button_release_event(nutsack_mouse_button_type::left_button);
+
+        }
+
+        window::event_cb(*event_ptr);
+    
     }
 
     void window::close_event_callback(GLFWwindow* window, int key, int scancode, int action, int mods){
@@ -34,7 +79,8 @@ namespace nutsack{
         nutsack_event* event = new nutsack_close_event(key, action);
         window::event_cb(*event);
     }
-    
+ 
+
     // ------------ MEMBERS -------------
     window::window(window::t_event_cb cb){
         window::event_cb = cb;
@@ -79,16 +125,13 @@ namespace nutsack{
 
         /* Set all callbacks */
         glfwSetKeyCallback(win, window::key_event_callback);
-        
-        glfwSetCursorPosCallback(win, window::mouse_event_callback);
-        
+        glfwSetCursorPosCallback(win, window::mouse_cursor_callback);
+        glfwSetMouseButtonCallback(win, window::mouse_button_callback);
+        glfwSetScrollCallback(win, window::mouse_scroll_callback);
 
         while (!glfwWindowShouldClose(win)){
-            //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-            //LOG_INFO("Running");
             glfwPollEvents();       
         }
     }
-
 
 }

@@ -10,6 +10,9 @@ namespace nutsack{
             ~nutsack_close_event(){};
 
             nutsack_close_event(int key, int action){};
+            nutsack_event_type get_event_type() override{
+                return nutsack_event_type::key_press_event;
+            }
     };
 }
 

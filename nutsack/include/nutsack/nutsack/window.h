@@ -20,10 +20,29 @@ namespace nutsack{
             void set_event_callback(t_event_cb);
             
         private:
+
+            // ---- EVENT CALLBACK ----
             static t_event_cb event_cb;
+            // -----------------------
+            
+
+            // ---- KEY CALLBACKS ----
             static void key_event_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
-            static void mouse_event_callback(GLFWwindow* window, double xpos, double ypos);
+            // -----------------------
+
+            // ---- WINDOW CALLBACKS ----
             static void close_event_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+            // -----------------------
+           
+
+            // ---- MOUSE CALLBACKS ----
+            static void mouse_cursor_callback(GLFWwindow* window, double xpos, double ypos);
+            
+            static void mouse_scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+            
+            static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+            // -----------------------
+
             void init();
     };
 }
