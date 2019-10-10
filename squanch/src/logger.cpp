@@ -7,7 +7,7 @@ namespace squanch{
 
     void squanch_logger::init(){
         spdlog::set_pattern("[%H:%M:%S %z] [%n] [%^---%L---%$] [thread %t] %v");
-        squanch_logger::engine_logger = spdlog::stdout_color_mt("NUTSACK");
+        squanch_logger::engine_logger = spdlog::stdout_color_mt("SQUANCH");
 
         squanch_logger::app_logger = spdlog::stdout_color_mt("APP");
     }

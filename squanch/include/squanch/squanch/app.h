@@ -11,7 +11,7 @@ namespace squanch{
     class window;
 
     /* Interface for application users */
-    class NUTSACK_API squanch_app{
+    class SQUANCH_API squanch_app{
     
         public:
             squanch_app();
