@@ -7,5 +7,5 @@ set (CMAKE_VERBOSE_MAKEFILE OFF)
 set (LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/nutsack)
+add_subdirectory(${CMAKE_SOURCE_DIR}/squanch)
 add_subdirectory(${CMAKE_SOURCE_DIR}/sandbox)

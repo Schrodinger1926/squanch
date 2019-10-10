@@ -10,4 +10,4 @@ target_include_directories(app
 			${PROJECT_SOURCE_DIR}/src
 			)
 
-target_link_libraries(app nutsack)
+target_link_libraries(app squanch)

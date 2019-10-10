@@ -1,8 +1,8 @@
 #pragma once
 
-#include <nutsack.h>
+#include <squanch.h>
 
-class sandbox_app: public nutsack::nutsack_app{
+class sandbox_app: public squanch::squanch_app{
 
     public:
         ~sandbox_app() override;

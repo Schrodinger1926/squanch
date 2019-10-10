@@ -22,9 +22,9 @@ void sandbox_app::run(){
 }
 
 // Factory function
-std::shared_ptr<nutsack::nutsack_app> nutsack::nutsack_create_application(){
+std::shared_ptr<squanch::squanch_app> squanch::squanch_create_application(){
     
-    std::shared_ptr<nutsack::nutsack_app> app(new sandbox_app);
+    std::shared_ptr<squanch::squanch_app> app(new sandbox_app);
     
     return app;
 }    
