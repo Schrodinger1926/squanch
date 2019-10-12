@@ -1,0 +1,8 @@
+language: cpp
+
+matrix:
+    - os: linux
+      dist: xenial
+      compiler: gcc
+
+script: cmake . && make && make test
