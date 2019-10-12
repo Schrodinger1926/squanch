@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Schrodinger1926/squanch.svg?branch=master)](https://travis-ci.org/Schrodinger1926/squanch)
+
+
 # Squanch
 An experimental game engine
 

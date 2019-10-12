@@ -9,3 +9,6 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/squanch)
 add_subdirectory(${CMAKE_SOURCE_DIR}/sandbox)
+
+enable_testing()
+add_subdirectory(${CMAKE_SOURCE_DIR}/tests)
