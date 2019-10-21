@@ -11,8 +11,8 @@ An experimental game engine
 * gcc >= 5.4.0
 * libx11
 #### Platforms
-Linux 
-MacOS  [Underway]
+Linux\
+MacOS  [Underway]\
 Windows [Underway]
 
 
